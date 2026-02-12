@@ -4,44 +4,89 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sunny Bhardwaj | MERN Developer</title>
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 html { scroll-behavior: smooth; }
+
 .gradient-text {
   background: linear-gradient(90deg, #4f46e5, #06b6d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 </head>
+
 <body class="bg-gray-950 text-white font-sans">
 
-<nav class="fixed w-full bg-gray-900 shadow-lg z-50">
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed w-full bg-gray-900/90 backdrop-blur-md shadow-lg z-50 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
     <h1 class="text-xl font-bold gradient-text">Sunny Bhardwaj</h1>
     <div class="space-x-6 hidden md:block">
-      <a href="#about" class="hover:text-cyan-400">About</a>
-      <a href="#projects" class="hover:text-cyan-400">Projects</a>
-      <a href="#skills" class="hover:text-cyan-400">Skills</a>
-      <a href="#contact" class="hover:text-cyan-400">Contact</a>
+      <a href="#about" class="hover:text-cyan-400 transition">About</a>
+      <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+      <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
+      <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+      <a href="https://www.linkedin.com/in/sunny-bhardwaj/" target="_blank"
+         class="bg-cyan-500 px-4 py-2 rounded-lg hover:bg-cyan-600 transition">
+         LinkedIn
+      </a>
     </div>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
-  <h2 class="text-4xl md:text-6xl font-bold mb-6">Hi, I'm <span class="gradient-text">Sunny Bhardwaj</span></h2>
+
+  <!-- PREMIUM GLOW DP -->
+  <div class="relative mb-8 mt-20">
+    <div class="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500 blur-2xl opacity-40"></div>
+    <img src="profile.jpg"
+         class="relative w-40 h-40 rounded-full border-4 border-white shadow-2xl object-cover hover:scale-105 transition duration-500">
+  </div>
+
+  <h2 class="text-4xl md:text-6xl font-bold mb-6">
+    Hi, I'm <span class="gradient-text">Sunny Bhardwaj</span>
+  </h2>
+
+  <h3 class="text-xl text-cyan-400 mb-4">
+    <span id="typing"></span>
+  </h3>
+
   <p class="text-gray-400 max-w-2xl text-lg mb-8">
-    MERN Stack Developer passionate about building scalable SaaS platforms, AI-powered applications, and real-time systems.
+    MERN Stack Developer passionate about building scalable SaaS platforms,
+    AI-powered applications, and real-time systems.
   </p>
+
   <div class="space-x-6 text-2xl">
-    <a href="https://github.com/SUNNY5499" target="_blank"><i class="fab fa-github hover:text-cyan-400"></i></a>
-    <a href="https://www.linkedin.com/in/sunny-bhardwaj/" target="_blank"><i class="fab fa-linkedin hover:text-cyan-400"></i></a>
-    <a href="https://wa.me/919470791478" target="_blank"><i class="fab fa-whatsapp text-green-500 hover:text-green-400"></i></a>
+    <a href="https://github.com/SUNNY5499" target="_blank">
+      <i class="fab fa-github hover:text-cyan-400 transition"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/sunny-bhardwaj/" target="_blank">
+      <i class="fab fa-linkedin hover:text-cyan-400 transition"></i>
+    </a>
+    <a href="https://wa.me/919470791478" target="_blank">
+      <i class="fab fa-whatsapp text-green-500 hover:text-green-400 transition"></i>
+    </a>
   </div>
 </section>
 
-<section id="about" class="py-20 bg-gray-900 px-6">
+<!-- ABOUT -->
+<section id="about" class="py-20 bg-gray-900 px-6 fade-in">
   <div class="max-w-4xl mx-auto text-center">
     <h3 class="text-3xl font-bold mb-6 gradient-text">About Me</h3>
     <p class="text-gray-400">
@@ -52,27 +97,34 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
-<section id="projects" class="py-20 px-6">
+<!-- PROJECTS -->
+<section id="projects" class="py-20 px-6 fade-in">
   <div class="max-w-6xl mx-auto">
     <h3 class="text-3xl font-bold text-center mb-12 gradient-text">Projects</h3>
     <div class="grid md:grid-cols-2 gap-10">
-      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
+
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition duration-300">
         <h4 class="text-xl font-bold mb-4">SmartQA - AI Powered Q&A</h4>
         <p class="text-gray-400">
-          Real-time Q&A platform using React, Node.js, Socket.IO, and Gemini AI API with JWT authentication.
+          Real-time Q&A platform using React, Node.js, Socket.IO,
+          and Gemini AI API with JWT authentication.
         </p>
       </div>
-      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
+
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition duration-300">
         <h4 class="text-xl font-bold mb-4">Pov-Lov - Pet E-Commerce</h4>
         <p class="text-gray-400">
-          MERN-based pet marketplace with dynamic pagination, authentication, and REST APIs.
+          MERN-based pet marketplace with dynamic pagination,
+          authentication, and REST APIs.
         </p>
       </div>
+
     </div>
   </div>
 </section>
 
-<section id="skills" class="py-20 bg-gray-900 px-6">
+<!-- SKILLS -->
+<section id="skills" class="py-20 bg-gray-900 px-6 fade-in">
   <div class="max-w-4xl mx-auto text-center">
     <h3 class="text-3xl font-bold mb-12 gradient-text">Technical Skills</h3>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-gray-300">
@@ -89,19 +141,73 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
-<section id="contact" class="py-20 px-6 text-center">
+<!-- CONTACT -->
+<section id="contact" class="py-20 px-6 text-center fade-in">
   <h3 class="text-3xl font-bold mb-6 gradient-text">Get In Touch</h3>
   <p class="text-gray-400 mb-6">Feel free to reach out for collaboration or opportunities.</p>
   <div class="space-x-6 text-2xl">
-    <a href="mailto:sunnybhardwaj90xh@gmail.com"><i class="fas fa-envelope hover:text-cyan-400"></i></a>
-    <a href="https://wa.me/919470791478" target="_blank"><i class="fab fa-whatsapp text-green-500 hover:text-green-400"></i></a>
-    <a href="https://github.com/SUNNY5499" target="_blank"><i class="fab fa-github hover:text-cyan-400"></i></a>
+    <a href="mailto:sunnybhardwaj90xh@gmail.com">
+      <i class="fas fa-envelope hover:text-cyan-400 transition"></i>
+    </a>
+    <a href="https://wa.me/919470791478" target="_blank">
+      <i class="fab fa-whatsapp text-green-500 hover:text-green-400 transition"></i>
+    </a>
+    <a href="https://github.com/SUNNY5499" target="_blank">
+      <i class="fab fa-github hover:text-cyan-400 transition"></i>
+    </a>
   </div>
 </section>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919470791478" target="_blank"
+   class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition">
+   <i class="fab fa-whatsapp text-white text-2xl"></i>
+</a>
 
 <footer class="py-6 text-center text-gray-600 border-t border-gray-800">
   © 2026 Sunny Bhardwaj | Built with ❤️ using Tailwind CSS
 </footer>
+
+<!-- JAVASCRIPT -->
+<script>
+/* Typing Effect */
+const text = ["MERN Stack Developer", "AI Application Builder", "DSA Enthusiast"];
+let i = 0, j = 0;
+let currentText = "";
+let isDeleting = false;
+const typingElement = document.getElementById("typing");
+
+function type() {
+  if (i < text.length) {
+    if (!isDeleting && j <= text[i].length) {
+      currentText = text[i].substring(0, j++);
+    } else if (isDeleting && j >= 0) {
+      currentText = text[i].substring(0, j--);
+    }
+
+    typingElement.innerHTML = currentText;
+
+    if (j === text[i].length) isDeleting = true;
+    if (j === 0 && isDeleting) {
+      isDeleting = false;
+      i = (i + 1) % text.length;
+    }
+  }
+  setTimeout(type, isDeleting ? 60 : 120);
+}
+type();
+
+/* Scroll Reveal */
+const faders = document.querySelectorAll(".fade-in");
+window.addEventListener("scroll", () => {
+  faders.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
